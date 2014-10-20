@@ -12,7 +12,7 @@ module.exports = (grunt) ->
 
 		DOMParser = require('xmldom').DOMParser
 		ProgressBar = require('progress')
-		bar = new ProgressBar('Checking XMLs [:bar] :percent :etas', {
+		bar = new ProgressBar('Validating XML [:bar] :percent :etas', {
 			width: 20,
 			total: this.filesSrc.length
 		})
