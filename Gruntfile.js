@@ -12,14 +12,14 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
- 
+
     // Configuration to be run (and then tested).
     xml_validator: {
       valid: {
 			src: [	'test/fixtures/example_ok.xml' ]
       },
       invalid: {
-			src: [ 'test/fixtures/example_fail.xml' ]
+      src: [ 'test/fixtures/example_ok.xml','test/fixtures/example_fail.xml' ]
       }
     },
 

@@ -11,10 +11,14 @@ module.exports = (grunt) ->
 	grunt.registerMultiTask('xml_validator', 'Grunt plugin to validate XML files', () ->
 
 		DOMParser = require('xmldom').DOMParser
+		ProgressBar = require('progress')
+		bar = new ProgressBar('Checking XMLs [:bar] :percent :etas', {
+			width: 20,
+			total: this.filesSrc.length
+		})
 
 		valid = 0
 		fail = false
-
 		this.filesSrc.forEach( (f) ->
 
 			xml = grunt.file.read(f)
@@ -27,12 +31,12 @@ module.exports = (grunt) ->
 					grunt.log.error f + "\tnot valid"
 
 			}).parseFromString(xml,'text/xml')
-
+			bar.tick()
 		)
 
-		if fail 
+		if fail
 			grunt.fail.warn 'Some files are not valid'
 		else
 			grunt.log.ok this.filesSrc.length + ' files valid'
-			
+
 	)

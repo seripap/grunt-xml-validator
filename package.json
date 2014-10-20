@@ -32,6 +32,7 @@
     "grunt-contrib-nodeunit": "~0.2.0",
     "grunt": "~0.4.4",
     "grunt-contrib-coffee": "~0.10.1",
+    "progress": "visionmedia/node-progress",
     "grunt-contrib-watch": "~0.6.1"
   },
   "peerDependencies": {
